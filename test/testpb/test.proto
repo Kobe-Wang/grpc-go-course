@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package test;
+option go_package = "./;pb";
+
+message Testing {
+    string first_name = 1;
+    string last_name = 2;
+}
+
+message TestRequest {
+    Testing testing = 1;
+}
+
+message TestResponse {
+    string result = 1;
+}
+
+service TestService {
+    // unary
+    rpc Test(TestRequest) returns (TestResponse) {};
+}
