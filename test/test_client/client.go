@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"io"
 	"log"
 
 	pb "grpc-go-course/test/testpb"
@@ -24,7 +25,9 @@ func main() {
 	c := pb.NewTestServiceClient(conn)
 	// fmt.Printf("Create client: %f", c)
 
-	doUnary(c)
+	//doUnary(c)
+
+	doServerStreaming(c)
 }
 
 func doUnary(c pb.TestServiceClient) {
@@ -43,4 +46,33 @@ func doUnary(c pb.TestServiceClient) {
 	}
 
 	log.Printf("Response from Test: %v", resp.Result)
+}
+
+func doServerStreaming(c pb.TestServiceClient) {
+	fmt.Println("Starting to do Server Streaming RPC...")
+
+	req := &pb.TestManyTimesRequest{
+		Testing: &pb.Testing{
+			FirstName: "Kobe",
+			LastName:  "Wang",
+		},
+	}
+
+	resStream, err := c.TestManyTimes(context.Background(), req)
+	if err != nil {
+		log.Fatalf("error while calling TestManyTimes RPC %v", err)
+	}
+
+	// From server streaming data
+	for {
+		msg, err := resStream.Recv()
+		if err == io.EOF {
+			// we've reached the end of the stream
+			break
+		}
+		if err != nil {
+			log.Fatalf("error while reading stream %v", err)
+		}
+		log.Printf("Response from the TestManyTimes: %v", msg.GetResult())
+	}
 }
