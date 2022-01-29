@@ -16,7 +16,18 @@ message TestResponse {
     string result = 1;
 }
 
+message TestManyTimesRequest {
+    Testing testing = 1;
+}
+
+message TestManyTimesResponse {
+    string result = 1;
+}
+
 service TestService {
     // unary
     rpc Test(TestRequest) returns (TestResponse) {};
+
+    // Server Streaming
+    rpc TestManyTimes(TestManyTimesRequest) returns (stream TestManyTimesResponse) {};
 }

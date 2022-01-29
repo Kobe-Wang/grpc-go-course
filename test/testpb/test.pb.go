@@ -173,6 +173,100 @@ func (x *TestResponse) GetResult() string {
 	return ""
 }
 
+type TestManyTimesRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Testing *Testing `protobuf:"bytes,1,opt,name=testing,proto3" json:"testing,omitempty"`
+}
+
+func (x *TestManyTimesRequest) Reset() {
+	*x = TestManyTimesRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_test_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *TestManyTimesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TestManyTimesRequest) ProtoMessage() {}
+
+func (x *TestManyTimesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_test_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TestManyTimesRequest.ProtoReflect.Descriptor instead.
+func (*TestManyTimesRequest) Descriptor() ([]byte, []int) {
+	return file_test_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *TestManyTimesRequest) GetTesting() *Testing {
+	if x != nil {
+		return x.Testing
+	}
+	return nil
+}
+
+type TestManyTimesResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Result string `protobuf:"bytes,1,opt,name=result,proto3" json:"result,omitempty"`
+}
+
+func (x *TestManyTimesResponse) Reset() {
+	*x = TestManyTimesResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_test_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *TestManyTimesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TestManyTimesResponse) ProtoMessage() {}
+
+func (x *TestManyTimesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_test_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TestManyTimesResponse.ProtoReflect.Descriptor instead.
+func (*TestManyTimesResponse) Descriptor() ([]byte, []int) {
+	return file_test_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *TestManyTimesResponse) GetResult() string {
+	if x != nil {
+		return x.Result
+	}
+	return ""
+}
+
 var File_test_proto protoreflect.FileDescriptor
 
 var file_test_proto_rawDesc = []byte{
@@ -187,12 +281,24 @@ var file_test_proto_rawDesc = []byte{
 	0x2e, 0x54, 0x65, 0x73, 0x74, 0x69, 0x6e, 0x67, 0x52, 0x07, 0x74, 0x65, 0x73, 0x74, 0x69, 0x6e,
 	0x67, 0x22, 0x26, 0x0a, 0x0c, 0x54, 0x65, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
 	0x65, 0x12, 0x16, 0x0a, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x32, 0x3e, 0x0a, 0x0b, 0x54, 0x65, 0x73,
-	0x74, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x2f, 0x0a, 0x04, 0x54, 0x65, 0x73, 0x74,
-	0x12, 0x11, 0x2e, 0x74, 0x65, 0x73, 0x74, 0x2e, 0x54, 0x65, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x1a, 0x12, 0x2e, 0x74, 0x65, 0x73, 0x74, 0x2e, 0x54, 0x65, 0x73, 0x74, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x07, 0x5a, 0x05, 0x2e, 0x2f, 0x3b,
-	0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x09, 0x52, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x22, 0x3f, 0x0a, 0x14, 0x54, 0x65, 0x73,
+	0x74, 0x4d, 0x61, 0x6e, 0x79, 0x54, 0x69, 0x6d, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x12, 0x27, 0x0a, 0x07, 0x74, 0x65, 0x73, 0x74, 0x69, 0x6e, 0x67, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x74, 0x65, 0x73, 0x74, 0x2e, 0x54, 0x65, 0x73, 0x74, 0x69, 0x6e,
+	0x67, 0x52, 0x07, 0x74, 0x65, 0x73, 0x74, 0x69, 0x6e, 0x67, 0x22, 0x2f, 0x0a, 0x15, 0x54, 0x65,
+	0x73, 0x74, 0x4d, 0x61, 0x6e, 0x79, 0x54, 0x69, 0x6d, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x32, 0x8c, 0x01, 0x0a, 0x0b,
+	0x54, 0x65, 0x73, 0x74, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x2f, 0x0a, 0x04, 0x54,
+	0x65, 0x73, 0x74, 0x12, 0x11, 0x2e, 0x74, 0x65, 0x73, 0x74, 0x2e, 0x54, 0x65, 0x73, 0x74, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x12, 0x2e, 0x74, 0x65, 0x73, 0x74, 0x2e, 0x54, 0x65,
+	0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x4c, 0x0a, 0x0d,
+	0x54, 0x65, 0x73, 0x74, 0x4d, 0x61, 0x6e, 0x79, 0x54, 0x69, 0x6d, 0x65, 0x73, 0x12, 0x1a, 0x2e,
+	0x74, 0x65, 0x73, 0x74, 0x2e, 0x54, 0x65, 0x73, 0x74, 0x4d, 0x61, 0x6e, 0x79, 0x54, 0x69, 0x6d,
+	0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1b, 0x2e, 0x74, 0x65, 0x73, 0x74,
+	0x2e, 0x54, 0x65, 0x73, 0x74, 0x4d, 0x61, 0x6e, 0x79, 0x54, 0x69, 0x6d, 0x65, 0x73, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x30, 0x01, 0x42, 0x07, 0x5a, 0x05, 0x2e, 0x2f,
+	0x3b, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -207,21 +313,26 @@ func file_test_proto_rawDescGZIP() []byte {
 	return file_test_proto_rawDescData
 }
 
-var file_test_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_test_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_test_proto_goTypes = []interface{}{
-	(*Testing)(nil),      // 0: test.Testing
-	(*TestRequest)(nil),  // 1: test.TestRequest
-	(*TestResponse)(nil), // 2: test.TestResponse
+	(*Testing)(nil),               // 0: test.Testing
+	(*TestRequest)(nil),           // 1: test.TestRequest
+	(*TestResponse)(nil),          // 2: test.TestResponse
+	(*TestManyTimesRequest)(nil),  // 3: test.TestManyTimesRequest
+	(*TestManyTimesResponse)(nil), // 4: test.TestManyTimesResponse
 }
 var file_test_proto_depIdxs = []int32{
 	0, // 0: test.TestRequest.testing:type_name -> test.Testing
-	1, // 1: test.TestService.Test:input_type -> test.TestRequest
-	2, // 2: test.TestService.Test:output_type -> test.TestResponse
-	2, // [2:3] is the sub-list for method output_type
-	1, // [1:2] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	0, // 1: test.TestManyTimesRequest.testing:type_name -> test.Testing
+	1, // 2: test.TestService.Test:input_type -> test.TestRequest
+	3, // 3: test.TestService.TestManyTimes:input_type -> test.TestManyTimesRequest
+	2, // 4: test.TestService.Test:output_type -> test.TestResponse
+	4, // 5: test.TestService.TestManyTimes:output_type -> test.TestManyTimesResponse
+	4, // [4:6] is the sub-list for method output_type
+	2, // [2:4] is the sub-list for method input_type
+	2, // [2:2] is the sub-list for extension type_name
+	2, // [2:2] is the sub-list for extension extendee
+	0, // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_test_proto_init() }
@@ -266,6 +377,30 @@ func file_test_proto_init() {
 				return nil
 			}
 		}
+		file_test_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TestManyTimesRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_test_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TestManyTimesResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -273,7 +408,7 @@ func file_test_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_test_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   3,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -301,6 +436,8 @@ const _ = grpc.SupportPackageIsVersion6
 type TestServiceClient interface {
 	// unary
 	Test(ctx context.Context, in *TestRequest, opts ...grpc.CallOption) (*TestResponse, error)
+	// Server Streaming
+	TestManyTimes(ctx context.Context, in *TestManyTimesRequest, opts ...grpc.CallOption) (TestService_TestManyTimesClient, error)
 }
 
 type testServiceClient struct {
@@ -320,10 +457,44 @@ func (c *testServiceClient) Test(ctx context.Context, in *TestRequest, opts ...g
 	return out, nil
 }
 
+func (c *testServiceClient) TestManyTimes(ctx context.Context, in *TestManyTimesRequest, opts ...grpc.CallOption) (TestService_TestManyTimesClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_TestService_serviceDesc.Streams[0], "/test.TestService/TestManyTimes", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &testServiceTestManyTimesClient{stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+type TestService_TestManyTimesClient interface {
+	Recv() (*TestManyTimesResponse, error)
+	grpc.ClientStream
+}
+
+type testServiceTestManyTimesClient struct {
+	grpc.ClientStream
+}
+
+func (x *testServiceTestManyTimesClient) Recv() (*TestManyTimesResponse, error) {
+	m := new(TestManyTimesResponse)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 // TestServiceServer is the server API for TestService service.
 type TestServiceServer interface {
 	// unary
 	Test(context.Context, *TestRequest) (*TestResponse, error)
+	// Server Streaming
+	TestManyTimes(*TestManyTimesRequest, TestService_TestManyTimesServer) error
 }
 
 // UnimplementedTestServiceServer can be embedded to have forward compatible implementations.
@@ -332,6 +503,9 @@ type UnimplementedTestServiceServer struct {
 
 func (*UnimplementedTestServiceServer) Test(context.Context, *TestRequest) (*TestResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Test not implemented")
+}
+func (*UnimplementedTestServiceServer) TestManyTimes(*TestManyTimesRequest, TestService_TestManyTimesServer) error {
+	return status.Errorf(codes.Unimplemented, "method TestManyTimes not implemented")
 }
 
 func RegisterTestServiceServer(s *grpc.Server, srv TestServiceServer) {
@@ -356,6 +530,27 @@ func _TestService_Test_Handler(srv interface{}, ctx context.Context, dec func(in
 	return interceptor(ctx, in, info, handler)
 }
 
+func _TestService_TestManyTimes_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(TestManyTimesRequest)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(TestServiceServer).TestManyTimes(m, &testServiceTestManyTimesServer{stream})
+}
+
+type TestService_TestManyTimesServer interface {
+	Send(*TestManyTimesResponse) error
+	grpc.ServerStream
+}
+
+type testServiceTestManyTimesServer struct {
+	grpc.ServerStream
+}
+
+func (x *testServiceTestManyTimesServer) Send(m *TestManyTimesResponse) error {
+	return x.ServerStream.SendMsg(m)
+}
+
 var _TestService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "test.TestService",
 	HandlerType: (*TestServiceServer)(nil),
@@ -365,6 +560,12 @@ var _TestService_serviceDesc = grpc.ServiceDesc{
 			Handler:    _TestService_Test_Handler,
 		},
 	},
-	Streams:  []grpc.StreamDesc{},
+	Streams: []grpc.StreamDesc{
+		{
+			StreamName:    "TestManyTimes",
+			Handler:       _TestService_TestManyTimes_Handler,
+			ServerStreams: true,
+		},
+	},
 	Metadata: "test.proto",
 }
